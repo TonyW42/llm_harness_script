@@ -25,5 +25,5 @@ lm_eval --model hf \
     --model_args pretrained="/ocean/projects/cis240092p/yw109/pause_token/models/llama3_8b/reg", dtype="bfloat16" \
     --tasks mmlu_flan_cot_fewshot \
     --device cuda:0 \
-    --batch_size 32 > output/mmlu_cot_reg.out 
+    --batch_size auto:4 > output/mmlu_cot_reg.out 
 

@@ -25,4 +25,4 @@ lm_eval --model hf \
     --model_args pretrained=meta-llama/Meta-Llama-3-8B, dtype="float16" \
     --tasks mmlu_flan_cot_fewshot \
     --device cuda:0 \
-    --batch_size 32 > output/mmlu_cot_baseline.out 
+    --batch_size auto:4 > output/mmlu_cot_baseline.out 
