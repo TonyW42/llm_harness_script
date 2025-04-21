@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#SBATCH --job-name=hellaswag_baseline             # Job name
+#SBATCH --job-name=commonsenseqa_pause             # Job name
 #SBATCH --partition=GPU-shared           # Use A100 GPU partition (change if needed)
 #SBATCH --gpus=h100-80:1                 # Request 4 GPUs per node
-#SBATCH --time=08:00:00                  # Time limit (2 hours)
-#SBATCH --output=hellaswag_baseline.out        # Standard output log
-#SBATCH --error=hellaswag_baseline.err         # Error log
+#SBATCH --time=08:00:00                  # Time limit (2 hpause)
+#SBATCH --output=output/commonsenseqa_pause.out        # Standard output log
+#SBATCH --error=error/commonsenseqa_pause.err         # Error log
 
 # Load required modules
 module load anaconda3
@@ -22,7 +22,8 @@ module load cuda
 
 # Run the Python script with specified parameters
 lm_eval --model hf \
-    --model_args pretrained=meta-llama/Meta-Llama-3-8B \
-    --tasks hellaswag \
+    --model_args pretrained="/ocean/projects/cis240092p/yw109/pause_token/models/llama3_8b/pause" \
+    --tasks commonsense_qa \
     --device cuda:0 \
-    --batch_size 1 > hellaswag_baseline.out 
+    --batch_size 1 > output/commonsenseqa_pause.out 
+
