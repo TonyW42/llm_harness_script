@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#SBATCH --job-name=hellaswag_reg             # Job name
+#SBATCH --job-name=hellaswag_ours             # Job name
 #SBATCH --partition=GPU-shared           # Use A100 GPU partition (change if needed)
 #SBATCH --gpus=h100-80:1                 # Request 4 GPUs per node
-#SBATCH --time=08:00:00                  # Time limit (2 hreg)
-#SBATCH --output=output/hellaswag_reg.out        # Standard output log
-#SBATCH --error=error/hellaswag_reg.err         # Error log
+#SBATCH --time=08:00:00                  # Time limit (2 hours)
+#SBATCH --output=output/hellaswag_ours.out        # Standard output log
+#SBATCH --error=error/hellaswag_ours.err         # Error log
 
 # Load required modules
 module load anaconda3
@@ -22,8 +22,8 @@ module load cuda
 
 # Run the Python script with specified parameters
 lm_eval --model hf \
-    --model_args pretrained="/ocean/projects/cis240092p/yw109/pause_token/models/llama3_8b/reg" \
-    --tasks commonsense_qa \
+    --model_args pretrained="/ocean/projects/cis240092p/yw109/pause_token/models/llama3_8b/ours" \
+    --tasks hellaswag \
     --device cuda:0 \
-    --batch_size 1 > output/hellaswag_reg.out 
+    --batch_size 1 > output/hellaswag_ours.out 
 

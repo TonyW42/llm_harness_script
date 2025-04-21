@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#SBATCH --job-name=hellaswag_pause             # Job name
+#SBATCH --job-name=gsm8k_zeroshot_reg             # Job name
 #SBATCH --partition=GPU-shared           # Use A100 GPU partition (change if needed)
 #SBATCH --gpus=h100-80:1                 # Request 4 GPUs per node
-#SBATCH --time=08:00:00                  # Time limit (2 hpause)
-#SBATCH --output=output/hellaswag_pause.out        # Standard output log
-#SBATCH --error=error/hellaswag_pause.err         # Error log
+#SBATCH --time=08:00:00                  # Time limit (2 hreg)
+#SBATCH --output=output/gsm8k_zeroshot_reg.out        # Standard output log
+#SBATCH --error=error/gsm8k_zeroshot_reg.err         # Error log
 
 # Load required modules
 module load anaconda3
@@ -22,8 +22,8 @@ module load cuda
 
 # Run the Python script with specified parameters
 lm_eval --model hf \
-    --model_args pretrained="/ocean/projects/cis240092p/yw109/pause_token/models/llama3_8b/pause" \
-    --tasks commonsense_qa \
+    --model_args pretrained="/ocean/projects/cis240092p/yw109/pause_token/models/llama3_8b/reg" \
+    --tasks gsm8k_yaml \
     --device cuda:0 \
-    --batch_size 1 > output/hellaswag_pause.out 
+    --batch_size 1 > output/gsm8k_zeroshot_reg.out 
 
