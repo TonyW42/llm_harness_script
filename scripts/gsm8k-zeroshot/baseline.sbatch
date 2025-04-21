@@ -23,6 +23,6 @@ module load cuda
 # Run the Python script with specified parameters
 lm_eval --model hf \
     --model_args pretrained=meta-llama/Meta-Llama-3-8B \
-    --tasks gsm8k_yaml \
+    --tasks gsm8k \
     --device cuda:0 \
     --batch_size 1 > output/gsm8k_zeroshot_baseline.out 
