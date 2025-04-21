@@ -23,7 +23,7 @@ module load cuda
 # Run the Python script with specified parameters
 lm_eval --model hf \
     --model_args pretrained="/ocean/projects/cis240092p/yw109/pause_token/models/llama3_8b/reg" \
-    --tasks gsm8k-cot \
+    --tasks gsm8k_cot \
     --device cuda:0 \
     --batch_size 1 > output/gsm8k_cot_reg.out 
 
