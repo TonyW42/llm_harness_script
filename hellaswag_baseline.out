@@ -1,0 +1,6 @@
+hf (pretrained=meta-llama/Meta-Llama-3-8B), gen_kwargs: (None), limit: None, num_fewshot: None, batch_size: 1
+|  Tasks  |Version|Filter|n-shot| Metric |   |Value |   |Stderr|
+|---------|------:|------|-----:|--------|---|-----:|---|-----:|
+|hellaswag|      1|none  |     0|acc     |↑  |0.6014|±  |0.0049|
+|         |       |none  |     0|acc_norm|↑  |0.7909|±  |0.0041|
+
