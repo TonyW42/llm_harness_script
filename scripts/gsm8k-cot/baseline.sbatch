@@ -21,7 +21,7 @@ module load cuda
 # export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 # Run the Python script with specified parameters
-lmeval-base/lm_eval --model hf \
+lm_eval --model hf \
     --model_args pretrained=meta-llama/Meta-Llama-3-8B \
     --tasks gsm8k_cot \
     --device cuda:0 \

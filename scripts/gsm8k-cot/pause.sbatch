@@ -21,9 +21,10 @@ module load cuda
 # export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 # Run the Python script with specified parameters
-lmeval-pause/lm_eval --model hf \
+lm_eval --model hf \
     --model_args pretrained="/ocean/projects/cis240092p/yw109/pause_token/models/llama3_8b/pause_trained" \
     --tasks gsm8k_cot \
     --device cuda:0 \
+    --add_pause_in_prompt \
     --batch_size 1 > output/gsm8k_cot_pause.out 
 
