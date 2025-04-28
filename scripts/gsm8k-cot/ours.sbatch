@@ -25,6 +25,6 @@ lm_eval --model hf \
     --model_args pretrained="/ocean/projects/cis240092p/yw109/pause_token/models/llama3_8b/ours" \
     --tasks gsm8k_cot \
     --device cuda:0 \
-    # --add_pause_in_prompt \
     --batch_size 1 > output/gsm8k_cot_ours.out 
+    # --add_pause_in_prompt \
 
