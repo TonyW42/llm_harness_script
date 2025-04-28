@@ -21,7 +21,7 @@ module load cuda
 # export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 # Run the Python script with specified parameters
-lm_eval --model hf \
+lmeval-pause/lm_eval --model hf \
     --model_args pretrained="/ocean/projects/cis240092p/yw109/pause_token/models/llama3_8b/ours" \
     --tasks gsm8k_cot \
     --device cuda:0 \
