@@ -25,4 +25,7 @@ lm_eval --model hf \
     --model_args pretrained=meta-llama/Meta-Llama-3-8B \
     --tasks gsm8k_cot \
     --device cuda:0 \
+    --log_samples \
+    --output_path output \
+    --gen_kwargs "{\"until\": [\"Q:\", \"</s>\", \"<|im_end|>\"]}" \
     --batch_size 1 > output/gsm8k_cot_baseline.out 
