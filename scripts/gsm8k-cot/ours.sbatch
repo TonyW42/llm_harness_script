@@ -26,7 +26,8 @@ lm_eval --model hf \
     --tasks gsm8k_cot \
     --device cuda:0 \
     --log_samples \
-    --output_path output/gsm8k_cot_ours.json\
+    --output_path output \
+    --gen_kwargs  "{'until': ['Q:', '</s>', '<|im_end|>']}"  \
     --batch_size 1 > output/gsm8k_cot_ours.out 
     # --add_pause_in_prompt \
 
