@@ -27,5 +27,5 @@ lm_eval --model hf \
     --device cuda:0 \
     --log_samples \
     --output_path output \
-    --gen_kwargs '{"until": ["Q:", "</s>", "<|im_end|>", "<|end_of_text|>"]}' \
+    --gen_kwargs '{"until": ["Q:", "</s>", "<|im_end|>", "<|end_of_text|>", "\n = = ="]}' \
     --batch_size 1 > output/gsm8k_cot_baseline.out 
